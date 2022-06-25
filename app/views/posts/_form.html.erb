@@ -1,0 +1,21 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form.label :checkbox ,"ボックス" %>
+    <%= form.check_box :checkbox %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :price %>
+    <%= form.text_field :price %><br>
+    <%= form.submit %>
+<% end %>
