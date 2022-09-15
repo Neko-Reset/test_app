@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms
   get "posts/search" => "posts#search"
   resources :posts
   devise_for :users
